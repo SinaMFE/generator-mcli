@@ -16,7 +16,7 @@
     "url": "https://github.com/SinaMFE/generator-mcli.git"
   },
   "author": "fengwan <fengwan@staff.sina.com.cn>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "yeoman-generator": "^1.1.1"
   }
