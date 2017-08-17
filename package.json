@@ -1,0 +1,23 @@
+{
+  "name": "generator-mcli",
+  "version": "1.0.0",
+  "description": "maraduer 脚手架，用于生成通用项目结构",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": ["generators"],
+  "keywords": ["yeoman-generator", "marauder"],
+  "homepage": "",
+  "bugs": {
+    "url": "https://github.com/SinaMFE/generator-mcli/issues"
+  },
+  "repository": {
+    "url": "https://github.com/SinaMFE/generator-mcli.git"
+  },
+  "author": "fengwan <fengwan@staff.sina.com.cn>",
+  "license": "ISC",
+  "dependencies": {
+    "yeoman-generator": "^1.1.1"
+  }
+}
