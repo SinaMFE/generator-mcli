@@ -25,7 +25,7 @@ npm install -g generator-mcli
 ### 更新
 
 ```bash
-npm update -g @mfelibs/generator-mcli
+npm update -g generator-mcli
 ```
 
 ## 生成项目
@@ -34,7 +34,7 @@ npm update -g @mfelibs/generator-mcli
 
 2. 进入 test-mcli 文件夹，在命令行中输入：
 
-        yo @mfelibs/mcli
+        yo mcli
 
 
 3. 根据提示初始化组件结构
