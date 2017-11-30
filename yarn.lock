@@ -240,6 +240,12 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/fs.realpath/download/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
 
+generator-mcli@^1.1.1-rc:
+  version "1.1.1-rc"
+  resolved "https://registry.npmjs.org/generator-mcli/-/generator-mcli-1.1.1-rc.tgz#5f0ab84f6643e7d010b3d300814907d6a99bdffc"
+  dependencies:
+    yeoman-generator "^2.0.1"
+
 get-stream@^3.0.0:
   version "3.0.0"
   resolved "http://registry.npm.taobao.org/get-stream/download/get-stream-3.0.0.tgz#8e943d1358dc37555054ecbe2edb05aa174ede14"

@@ -1,4 +1,4 @@
-const generators = require('yeoman-generator')
+const Generator = require('yeoman-generator')
 const simpleFiles = {
   src: 'src',
   // '.babelrc': '.babelrc',
@@ -10,15 +10,17 @@ const simpleFiles = {
 }
 const tplFiles = {}
 
-module.exports = generators.extend({
-  initializing() {
+module.exports = class extends Generator {
+  constructor(args, opts) {
+    super(args, opts)
+
     this.log(this._globalConfig.name)
     this.log('会替换当前文件夹下文件，请确认当前文件夹为空或都可替换')
     this.spawnCommandSync('git', [
       'clone',
       'https://github.com/SinaMFE/marauder-template.git'
     ])
-  },
+  }
 
   prompting() {
     return this.prompt([
@@ -62,7 +64,7 @@ module.exports = generators.extend({
         this.log('cool feature', answers.cool)
       }.bind(this)
     )
-  },
+  }
 
   writing() {
     var source
@@ -80,53 +82,21 @@ module.exports = generators.extend({
     this._copyPackagejson('package.json', 'package.json')
     this.conflicter.force = true
     this.fs.delete(this.destinationPath('marauder-template/'))
-  },
+  }
 
   conflicts() {
     // var path = this.destinationPath('package.json')
     // this.conflicter.collision(path)
-  },
+  }
 
   install() {
     this.spawnCommandSync('git', ['init'])
     // this.yarnInstall(undefined, {
     //     registry: 'http://registry.cnpm.sina.com.cn/'
     // });
-  },
+  }
 
-  end() {
-    //     this.log(
-    //       "\
-    //                             ,;'`    ,.                           \n\
-    //                        ,   ';;;   ;;;`                           \n\
-    //                      ,';  ';;', ,;;;:  `;;'                      \n\
-    //                  `' `';;;;;;;;;;;;;;,,';;'`                      \n\
-    //                  ;;.;;;;;;;;;;;;;;;;;;;;'`                       \n\
-    //                 ;;;;;;;;.       .;;;;;;;;.                       \n\
-    //                .;;;;:     ,,       .;;;;;;                       \n\
-    //                ;;;;    ;#####@`     .;;;;'                       \n\
-    //               `';'`   ;#@#'###'     `;;;;:                       \n\
-    //                ';'    @'  ;##@;     ;;;;'                        \n\
-    //                .;;;   :#:'##@.     ';;;,                         \n\
-    //                  ;;;:   :';.    ,';;;`                           \n\
-    //                    `:;;';;;;;';;;,                               \n\
-    //          :#@######@#.           `;#@#########     +@########@@.  \n\
-    //       `#####@##@###@` +#@@##  .@#############@   .##@###@#####@, \n\
-    //      ,@###'       ;+ .@###@.  ;###@;    +####@            +###@, \n\
-    //      '######@#',     +####'  `@###'     +####`    .;#@@@+`@####  \n\
-    //       @###########, `####@`  ####@.    .@###+  .@####@## ;###@:  \n\
-    //         `,;+@#####; `####;  `#####     ;####, :####+     #####   \n\
-    //    `@'`      ####@` '###@`  +###@,    `@####  @###@.   `+###@`   \n\
-    //    ##############   +###.  `@####     :###@;  #############.     \n\
-    //    `'#@######;`    `@##+   +###@`     @####    .+#####'.         \n\
-    //                    .##@`                                         \n\
-    //                    '##'                                          \n\
-    //                    @#'                                           \n\
-    //                    @#                                            \n\
-    //                    #                                             \n\
-    // "
-    //     )
-  },
+  end() {}
 
   _copyPackagejson(source, dest) {
     var json = this.fs.readJSON(
@@ -139,7 +109,7 @@ module.exports = generators.extend({
     json.version = this.version
     json.repository = this.repository || ''
     this.fs.writeJSON(this.destinationPath(source), json)
-  },
+  }
 
   _copyTpl(source, dest) {
     this.fs.copyTpl(
@@ -147,7 +117,7 @@ module.exports = generators.extend({
       this.destinationPath(dest),
       this
     )
-  },
+  }
 
   _copy(source, dest) {
     this.fs.copy(
@@ -155,4 +125,4 @@ module.exports = generators.extend({
       this.destinationPath(dest)
     )
   }
-})
+}
