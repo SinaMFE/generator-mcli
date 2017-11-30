@@ -1,13 +1,12 @@
 const generators = require('yeoman-generator')
 const simpleFiles = {
   src: 'src',
-  '.babelrc': '.babelrc',
+  // '.babelrc': '.babelrc',
   '.eslintrc.yml': '.eslintrc.yml',
   '.gitlab-ci.yml': '.gitlab-ci.yml',
   '.gitignore': '.gitignore',
   'marauder.config.js': 'marauder.config.js',
-  'README.md': 'README.md',
-  'yarn.lock': 'yarn.lock'
+  'README.md': 'README.md'
 }
 const tplFiles = {}
 
