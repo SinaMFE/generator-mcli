@@ -1,6 +1,6 @@
 {
   "name": "generator-mcli",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "maraduer 脚手架，用于生成通用项目结构",
   "main": "index.js",
   "scripts": {
