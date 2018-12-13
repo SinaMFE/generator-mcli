@@ -5,6 +5,7 @@ const simpleFiles = {
   '.eslintrc.yml': '.eslintrc.yml',
   '.gitlab-ci.yml': '.gitlab-ci.yml',
   '.gitignore': '.gitignore',
+  '.arcconfig': '.arcconfig',
   'marauder.config.js': 'marauder.config.js',
   'README.md': 'README.md'
 }
